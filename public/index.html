@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authorization</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="splash-screen-welcome">
+      <div id="splash-screen-welcome-video">
+        <video autoplay loop muted playsinline>
+          <source src="img/splash-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    <div id="splash-screen-form-container">
+      <img class="heart_doodle_1" src="img/heart-1.png" alt="" />
+      <h1 id="splash-screen-form-title">elifveberkay.com</h1>
+      <form id="splash-screen-form" onsubmit="login(event)">
+        <div class="splash-screen-form-item">
+          <input
+            type="password"
+            id="key_code"
+            name="password"
+            placeholder="anahtar kodu girin"
+            required
+          />
+        </div>
+
+        <button class="splash-screen-form-item" type="submit">
+          Giriş yap!
+        </button>
+      </form>
+    </div>
+    <script>
+      async function login(event) {
+        event.preventDefault();
+
+        const key_code_input = document.getElementById("key_code").value;
+
+        try {
+          const response = await fetch("/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ password: key_code_input }),
+          });
+
+          if (response.ok) {
+            localStorage.setItem("isLoggedIn", "true");
+            window.location.href = "/main.html";
+          } else {
+            document.getElementById("key_code").style.backgroundColor = "red";
+          }
+        } catch (error) {
+          console.error("Connection error:", error);
+          alert("Sunucuya bağlanılamadı.");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+}
+
+body {
+  background-image:
+    url(img/doodle.jpg), linear-gradient(to bottom, #ffe3a9, #8ccdeb);
+  background-blend-mode: luminosity;
+  background-repeat: repeat;
+  background-size: 20rem;
+  z-index: -1;
+  width: 100vw;
+  overflow-x: hidden;
+  padding: 3rem;
+}
+
+#album {
+  width: 100%;
+  height: 100%;
+  column-count: 3;
+  column-gap: 1.2rem;
+  padding: 1.2rem;
+  animation: smooth-appear 5s ease-out forwards;
+}
+
+@keyframes smooth-appear {
+  0% {
+    transform: translateY(-200%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.album_photo {
+  break-inside: avoid;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.75rem;
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 0px 14px 28px,
+    rgba(0, 0, 0, 0.35) 0px 10px 10px;
+  transition: filter 0.5s ease-in;
+  position: relative;
+}
+
+.album_photo_catchPhrase {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  font-family: "SN Pro", sans-serif;
+  overflow: hidden;
+  z-index: 100;
+  animation: appear-catchPhrase 0.5s ease-in;
+}
+
+@keyframes appear-catchPhrase {
+  from {
+    opacity: 0;
+  }
+  t0 {
+    opacity: 1;
+  }
+}
+
+.album_photo img,
+.album_photo video {
+  width: 100%;
+  display: block;
+  transition: scale 0.5s ease-in;
+  opacity: 0.3;
+}
+
+.featured_slider {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: #000;
+  overflow: hidden;
+}
+
+.featured_slider img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.featured_slider .active {
+  opacity: 1;
+  opacity: 0;
+}
+
+#spotify {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 4rem;
+  right: 0;
+  width: 25rem;
+  transform: translateX(100%);
+  z-index: 1000;
+  transition: transform 2s ease;
+  cursor: pointer;
+}
+
+#spotify img {
+  width: 4rem;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  padding: 0.75rem;
+  background-color: #86009b;
+  position: absolute;
+  top: 25%;
+  right: 100%;
+}
+
+#spotify .spotify_playlist {
+}
+
+@media (max-width: 900px) {
+  #album {
+    column-count: 2;
+  }
+}
+@media (max-width: 600px) {
+  #album {
+    column-count: 1;
+  }
+}
