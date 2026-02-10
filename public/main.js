@@ -1,11 +1,11 @@
-/*(function () {
+(function () {
   const auth = localStorage.getItem("isLoggedIn");
 
   if (auth !== "true") {
     window.location.href = "/";
     alert("Yetkisiz erişim! Lütfen önce giriş yapın.");
   }
-})();*/
+})();
 
 const album = document.getElementById("album");
 const folderPath = "/photos/";

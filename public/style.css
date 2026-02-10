@@ -97,3 +97,63 @@ body {
 .splash-screen-form-item[type="submit"]:hover {
   background-color: #f2aebb;
 }
+
+@media (max-width: 1200px) {
+  body {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #splash-screen-welcome {
+    order: 1;
+  }
+
+  #splash-screen-welcome-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #splash-screen-welcome-video video {
+    width: 90%;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+
+  #splash-screen-form-container {
+    margin-right: 0;
+  }
+
+  #splash-screen-form-container .heart_doodle_1 {
+    width: 140%;
+    top: 5rem;
+    left: -12rem;
+    z-index: 100;
+    transform: rotate(22.5deg);
+  }
+
+  #splash-screen-form-title {
+    font-size: 6.5rem;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-top: 20rem;
+  }
+
+  #splash-screen-form-title::after {
+    font-size: 2.5rem;
+    right: -5rem;
+  }
+
+  .splash-screen-form-item #key_code {
+    font-size: 4rem;
+    height: 5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .splash-screen-form-item[type="submit"] {
+    width: 12rem;
+    height: 5rem;
+    font-size: 1.75rem;
+  }
+}
