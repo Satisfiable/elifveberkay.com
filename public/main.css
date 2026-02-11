@@ -128,6 +128,33 @@ body {
   right: 100%;
 }
 
+@media (max-width: 440px) {
+  html {
+    font-size: 12px;
+  }
+
+  #album {
+    column-gap: 0.5rem;
+  }
+
+  .album_photo {
+    margin-bottom: 0.5rem;
+  }
+
+  .featured_slider .active {
+    opacity: 1;
+    opacity: 0;
+  }
+
+  #spotify {
+    width: 50rem;
+  }
+
+  #spotify img {
+    width: 8rem;
+  }
+}
+
 @media (max-width: 1200px) {
   html {
     font-size: 12px;
