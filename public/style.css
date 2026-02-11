@@ -49,6 +49,7 @@ body {
   margin-right: 10rem;
   margin-bottom: 2rem;
   opacity: 0.8;
+  z-index: 3000;
 }
 
 #splash-screen-form-title::after {
@@ -65,6 +66,10 @@ body {
   opacity: 0.8;
 }
 
+#splash-screen-form {
+  z-index: 3000;
+}
+
 .splash-screen-form-item #key_code {
   border: 0;
   border-radius: 0.25rem;
@@ -75,7 +80,6 @@ body {
   font-family: "SN Pro", sans-serif;
   margin-bottom: 0.5rem;
   opacity: 0.5;
-  z-index: 3000;
 }
 
 .splash-screen-form-item #key_code::placeholder {
@@ -126,6 +130,7 @@ body {
   }
 
   #splash-screen-form-container {
+    margin-left: 2rem;
     margin-right: 0;
   }
 
