@@ -49,7 +49,6 @@ body {
   margin-right: 10rem;
   margin-bottom: 2rem;
   opacity: 0.8;
-  z-index: 3000;
 }
 
 #splash-screen-form-title::after {
@@ -64,10 +63,6 @@ body {
   top: 1rem;
   right: -3rem;
   opacity: 0.8;
-}
-
-#splash-screen-form {
-  z-index: 3000;
 }
 
 .splash-screen-form-item #key_code {
@@ -130,7 +125,7 @@ body {
   }
 
   #splash-screen-form-container {
-    margin-left: 2rem;
+    margin-left: 5rem;
     margin-right: 0;
   }
 
@@ -138,7 +133,6 @@ body {
     width: 140%;
     top: 5rem;
     left: -12rem;
-    z-index: 100;
     transform: rotate(22.5deg);
   }
 
@@ -198,7 +192,6 @@ body {
     width: 140%;
     top: 5rem;
     left: -12rem;
-    z-index: 100;
     transform: rotate(22.5deg);
   }
 
